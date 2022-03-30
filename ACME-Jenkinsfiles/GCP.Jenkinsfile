@@ -15,7 +15,12 @@ pipeline {
         }
         stage('Is there any Terraform?') {
             steps {
-                sh 'terraform init'
+                sh 'terraform --version'
+            }
+        }
+        stage('Is there any gcp sdk?') {
+            steps {
+                sh 'gcloud --version'
             }
         }
     }
